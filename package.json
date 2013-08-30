@@ -1,0 +1,13 @@
+{
+  "name": "Aroma",
+  "version": "0.0.1",
+  "dependencies": {
+    "plist":         "0.4.3",
+    "coffee-script": "1.4.0",
+    "nconf":          "0.6.7"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "aroma" : "lib/aroma.coffee"
+  }
+}
