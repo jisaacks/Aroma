@@ -9,10 +9,10 @@ optimist = require "optimist"
 argv = optimist
   
   # Define aliases
-  .alias(c:"compile", o:"output", w:"watch")
+  .alias(c:"compile", o:"output", w:"watch", e:"extension")
   
-  # Set the default compile to current directory
-  .default(c:".")
+  # Set the defaults
+  .default(c:".", e:"plist")
   
   # Specify --watch as boolean flag
   .boolean("w")
@@ -116,7 +116,7 @@ class Aroma
     outdir = @_output || path.dirname filepath
     
     # Determine the full file path we are writing to
-    outfile = "#{outdir}/#{filename}.tmTheme"
+    outfile = "#{outdir}/#{filename}.#{argv.extension}"
     
     # Compile the .aroma.coffee file into plist format
     contents = @build filepath
