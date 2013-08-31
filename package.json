@@ -1,5 +1,5 @@
 {
-  "name": "Aroma",
+  "name": "aroma",
   "version": "0.0.1",
   "dependencies": {
     "plist":         "0.4.3",
