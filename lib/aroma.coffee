@@ -3,24 +3,39 @@
 fs       = require "fs"
 plist    = require "plist"
 path     = require "path"
-nconf    = require "nconf"
+optimist = require "optimist"
+
+# Setup optimist options
+argv = optimist
+  
+  # Define aliases
+  .alias(c:"compile", o:"output", w:"watch")
+  
+  # Set the default compile to current directory
+  .default(c:".")
+  
+  # Specify --watch as boolean flag
+  .boolean("w")
+  
+  # Require --compile to be a string
+  .check((args)-> typeof args.c == "string")
+
+  # Return the the argument object
+  .argv
 
 class Aroma
   constructor: ->
-    # Check that we have something to compile
-    if @_compile = nconf.get("compile")
+    # What are we compiling?
+    @_compile = argv.compile
       
-      # Check for an output path
-      @_output = nconf.get("output")
-      
-      # Are we to start watching for changes?
-      @watch() if @_watch = nconf.get("watch")
-      
-      # If we are watching or not, compile now
-      @compile()
+    # Check for an output path
+    @_output = argv.output
     
-    else
-      @error "--compile is required"
+    # Are we to start watching for changes?
+    @watch() if argv.watch
+    
+    # If we are watching or not, compile now
+    @compile()
 
   #-------
 
@@ -111,6 +126,5 @@ class Aroma
       @error err if err
 
 # Get the whole thing started
-nconf.env().argv()
 new Aroma()
 
