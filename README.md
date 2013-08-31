@@ -2,6 +2,8 @@
 
 Command line utility to compile [CoffeeScript](http://coffeescript.org/) objects into [property list](http://en.wikipedia.org/wiki/Property_list) files.
 
+---
+
 ### Rationale
 
 A plist file is very verbose and cumbersome to edit. Aroma lets you define your property lists in CoffeeScript with a much more terse syntax with the added benefit of using logic and variables.
@@ -33,6 +35,8 @@ The generated plist will be:
 
 Notice how much more terse the coffee file is? Did you also notice how we used a variable!
 
+---
+
 ### Usage
 
 __Compile a single file:__
@@ -51,9 +55,13 @@ __Specify what extension to save the property list as:__
 
 * `$ aroma -e ".tmTheme"`
 
+---
+
 ### Installation
 
 Aroma is a Node.js module so first you must install [Node.js](http://nodejs.org/) then run `npm install -g aroma`
+
+---
 
 ### License
 
