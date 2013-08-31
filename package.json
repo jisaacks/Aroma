@@ -9,5 +9,9 @@
   "preferGlobal": "true",
   "bin": {
     "aroma" : "lib/aroma.coffee"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jisaacks/Aroma.git"
+ }
 }
