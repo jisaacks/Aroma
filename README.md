@@ -31,7 +31,7 @@ The generated plist will be:
 </plist>
 ```
 
-Notice how much terse the coffee file is? Did you also notice how we used a variable!
+Notice how much more terse the coffee file is? Did you also notice how we used a variable!
 
 ### Usage
 
@@ -39,7 +39,7 @@ __Compile a single file:__
 
 * `$ aroma -c myfile.aroma.coffee`
 
-__Compile all the files aroma files in ./src to plist files in ./lib:__
+__Compile all the aroma coffee files in `./src` to plist files in `./lib`:__
 
 * `$ aroma -o lib -c src`
 
