@@ -53,7 +53,7 @@ __Watch the current directory for any changes and automatically compile .aroma.c
 
 __Specify what extension to save the property list as:__
 
-* `$ aroma -e ".tmTheme"`
+* `$ aroma -e tmTheme`
 
 ---
 

@@ -122,7 +122,7 @@ class Aroma
     contents = @build filepath
     
     # Write the compiled contents to the outfile
-    fs.writeFile outfile, contents, (err) ->
+    fs.writeFile outfile, contents, (err) =>
       @error err if err
 
 # Get the whole thing started
